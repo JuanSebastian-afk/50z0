@@ -69,7 +69,7 @@ public class Game {
 
     List<Card> getHandHumanPlayer(){
         for(Player player: players){
-            if(player.getId()==0){
+            if(player.getTurn()==0){
                 return player.getHandCard();
             }
         }

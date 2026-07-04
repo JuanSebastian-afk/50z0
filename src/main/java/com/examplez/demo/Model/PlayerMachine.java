@@ -1,6 +1,7 @@
 package com.examplez.demo.Model;
 import java.util.List;
 public class PlayerMachine extends Player{
+    int maximumSumPoints=50;
 
     public PlayerMachine(List<Card> deckCards, int turn) {
         super(deckCards, turn);
@@ -10,14 +11,22 @@ public class PlayerMachine extends Player{
     //Change name playCardInt by cardPlayed
 
      public Card playCardInt(int SumaPuntos){
-        if (SumaPuntos<50){
-            for (Card Card: HandCard ){
-                if(Card.getCardValue()+SumaPuntos<=50){
+        if (SumaPuntos<maximumSumPoints){
+            for (Card Card: handCard ){
+                if(Card.getCardValue()+SumaPuntos<=maximumSumPoints){
                     return Card;
                 }
             }
         }
      return null;}
+    public boolean isAbleToPlay(int currentSum,int maximumSumn){
+        for (Card Card: handCard){
+            if (Card.getCardValue()+currentSum<=maximumSumn){
+                return true;
+            }
+
+        }
+   return false; }
 
 }
 
